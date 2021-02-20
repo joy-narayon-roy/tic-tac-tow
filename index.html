@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Tow</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+<body>
+    <header>
+        <h1 class="bg-primary text-center p-3 mt-0">Tic Tac Tow</h1>
+    </header>
+    <main class="">
+        <div class="d-flex justify-content-between game_score">
+            <div class="card card-body">
+                <p class="card-text">
+                    Player - X
+                    <br>
+                    Win - <span id="xWin"></span>
+                    <br>
+                    Drow - <span id="drow"></span>
+                </p>
+            </div>
+            <div class="card card-body">
+                <p>
+                    Player - Y
+                    <br />
+                    Win - <span id="oWin"></span>
+                    <br />
+                    Drow - <span id="drow"></span>
+                </p>
+            </div>
+        </div>
+
+        <section class="container mt-3 mx-auto d-flex justify-content-around row">
+            <div id="playerX" class="coll card px-4">
+                <h3>Player-X</h3>
+            </div>
+            <div id="playerO" class="coll card px-4">
+                <h3>Player-O</h3>
+            </div>
+        </section>
+
+        <section class="d-block mt-4">
+            <div class="game_field" id="game_field">
+                <table class="game" id="game" border="0">
+                    <tr>
+                        <td onclick="clickIt(this.id)" id="cell-1">
+                            <i class="" id="cell-1-i">
+
+                            </i>
+                        </td>
+                        <td onclick="clickIt(this.id)" id="cell-2">
+                            <i class="" id="cell-2-i">
+
+                            </i>
+                        </td>
+                        <td onclick="clickIt(this.id)" id="cell-3">
+                            <i class="" id="cell-3-i">
+
+                            </i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td onclick="clickIt(this.id)" id="cell-4">
+                            <i class="" id="cell-4-i">
+
+                            </i>
+                        </td>
+                        <td onclick="clickIt(this.id)" id="cell-5">
+                            <i class="" id="cell-5-i">
+
+                            </i>
+                        </td>
+                        <td onclick="clickIt(this.id)" id="cell-6">
+                            <i class="" id="cell-6-i">
+
+                            </i>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td onclick="clickIt(this.id)" id="cell-7">
+                            <i class="" id="cell-7-i">
+
+                            </i>
+                        </td>
+                        <td onclick="clickIt(this.id)" id="cell-8">
+                            <i class="" id="cell-8-i">
+
+                            </i>
+                        </td>
+                        <td onclick="clickIt(this.id)" id="cell-9">
+                            <i class="" id="cell-9-i">
+
+                            </i>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="game_control">
+                <button class="d-block btn btn-primary" onclick="reload()" id="reload">Reload</button>
+                <button id="reset" onclick="resetData()" class="d-block btn btn-danger" type="reset">Reset</button>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" integrity="sha512-F5QTlBqZlvuBEs9LQPqc1iZv2UMxcVXezbHzomzS6Df4MZMClge/8+gXrKw2fl5ysdk4rWjR0vKS7NNkfymaBQ==" crossorigin="anonymous"></script>
+
+
+    <script type="text/javascript" charset="utf-8">
+        let width = document.getElementById('game_field').clientWidth+'px';
+        document.getElementById('game_field').style = `height: ${width};box-sizing: border-box;`
+    </script>
+
+    <script src="app.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>
